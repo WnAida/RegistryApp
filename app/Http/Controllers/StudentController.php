@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StudentStoreRequest;
 use App\Http\Requests\StudentUpdateRequest;
 use App\Http\Resources\StudentResource;
+use App\Imports\StudentImport;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -75,4 +78,18 @@ class StudentController extends Controller
         $student->delete();
         return $this->return_api(true, Response::HTTP_OK, null, new StudentResource($student), null, null);
     }
+
+    public function excel(Request $request){
+
+        $validated = Validator::make($request->all(), [
+            'excel' => 'required|mimes:csv,excel'
+        ]);
+
+        $file = $request->file('excel');
+
+        Excel::import(new StudentImport, $file);
+
+        return $this->return_api(true, Response::HTTP_OK, null, null, null, null);
+    }
+
 }

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
 
 Route::middleware(
     'auth:api',
@@ -25,6 +26,9 @@ Route::middleware(
     Route::delete('/student/{student}', [StudentController::class, 'delete']);
     Route::post('/student', [StudentController::class, 'store']);
     Route::put('/student/{student}', [StudentController::class, 'update']);
+
+    //excel
+    Route::post('/import', [StudentController::class, 'excel']);
 });
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
