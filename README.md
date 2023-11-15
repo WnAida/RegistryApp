@@ -17,7 +17,9 @@ of South of Australia University.
 
 Google Drive : https://drive.google.com/drive/folders/1B_VdP50IuyVbFvuPnxVFWMLFJtDHUH55?usp=drive_link
 
-Youtube : https://youtu.be/XpmQACdoQBQ
+Youtube : https://youtu.be/YmBzAfAxXnw
+
+Postman Link : https://app.getpostman.com/join-team?invite_code=3667dcc098750a151cc92f4650536d2a&target_code=17dc9f409a5228436f33a7aea2a181b6
 
 ### Track Commits to Github
 
